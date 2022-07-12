@@ -7,6 +7,7 @@ import {
   createSelectSection,
   createWelcomePage,
 } from '../views/welcomeView.js';
+import { initButtonElement } from './backButtonPage.js';
 import { initArticalCards } from './newsPage.js';
 import { initWeatherSection } from './weatherPage.js';
 
@@ -33,6 +34,7 @@ const fetchSelectedApi = (selected) => {
   if (selected === 'public/img/news.png') {
     selectedImage.addEventListener('click', () => {
       initWeatherSection();
+      initButtonElement();
       initArticalCards();
     });
   }
