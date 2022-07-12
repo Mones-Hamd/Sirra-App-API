@@ -8,6 +8,7 @@ import {
   createWelcomePage,
 } from '../views/welcomeView.js';
 import { initArticalCards } from './newsPage.js';
+import { initWeatherSection } from './weatherPage.js';
 
 export const initWelcomePage = () => {
   const userInterFace = document.getElementById(USER_INTERFACE_ID);
@@ -31,6 +32,7 @@ const fetchSelectedApi = (selected) => {
   const selectedImage = document.getElementById(SELECTED_IMAGE_ID);
   if (selected === 'public/img/news.png') {
     selectedImage.addEventListener('click', () => {
+      initWeatherSection();
       initArticalCards();
     });
   }
