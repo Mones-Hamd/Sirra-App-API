@@ -2,12 +2,12 @@ import {
   SELCTED_FEELING_ID,
   SELECTED_IMAGE_ID,
   USER_INTERFACE_ID,
-  // WEATHER_DATA_URL,
 } from '../constant.js';
 import {
   createSelectSection,
   createWelcomePage,
 } from '../views/welcomeView.js';
+import { initArticalCards } from './newsPage.js';
 
 export const initWelcomePage = () => {
   const userInterFace = document.getElementById(USER_INTERFACE_ID);
@@ -31,7 +31,7 @@ const fetchSelectedApi = (selected) => {
   const selectedImage = document.getElementById(SELECTED_IMAGE_ID);
   if (selected === 'public/img/news.png') {
     selectedImage.addEventListener('click', () => {
-      //fetchApiData(WEATHER_DATA_URL);
+      initArticalCards();
     });
   }
   if (selected === 'public/img/jokes.png') {
