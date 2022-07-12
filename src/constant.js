@@ -1,0 +1,16 @@
+export const USER_INTERFACE_ID = 'user-interface';
+export const LOGIN_CONTAINER_CLASS = 'login-container';
+export const USER_NAME_ID = 'user-name';
+export const CONFIRM_BUTTON_ID = 'confirm-btn';
+export const WELCOME_MESSAGE_ID = 'welcome-message';
+export const WELCOME_MESSAGE_TITLE_ID = 'welcome-msg-title';
+export const WELCOME_MESSAGE_TEXT_ID = 'welcome-msg-text';
+export const FEELING_SELECTOR_ID = 'feeling-selector';
+export const SELCTED_FEELING_ID = 'selected';
+export const CURIOUS_NEWS_API_ID = 'curious-news';
+export const BORING_JOK_API_ID = 'boring-jok';
+export const EXCITED_SPORT_API_ID = 'excited-sport';
+export const HUNGRY_FOOD_API_ID = 'hungry-food';
+export const SELECTED_IMAGE_ID = 'selected-image';
+export const ARTICAL_SEARCH_ID = 'artical-search';
+export const ARTICAL_CARD_CONTAINER_ID = 'artical-card-container';
