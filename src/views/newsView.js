@@ -7,7 +7,7 @@ export const createSearchArticalElement = () => {
   <h3>Artical search </h3>
   <input type="text"
     id=${ARTICAL_SEARCH_ID} 
-     placeholder="Search for Artical"/>
+     placeholder="Search for Article"/>
   
   `;
   return searchDiv;
