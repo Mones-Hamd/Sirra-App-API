@@ -56,7 +56,7 @@ export const initSearchArtical = async (word) => {
   }
   const articalSection = document.getElementById(ARTICAL_CARD_CONTAINER_ID);
 
-  articalSection.innerHTML = `<h1> You are looking for: ${word} ..</h1>`;
+  articalSection.innerHTML = '';
   const QueryURL = `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${word}&api-key=lKN7Juy8tbmDgVbVW9ukPWWs50yirKyR`;
   const searchInAPI = await fetchApiData(QueryURL);
   const data = await searchInAPI.response['docs'];

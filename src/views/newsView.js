@@ -28,14 +28,20 @@ export const createArticalElement = () => {
   return articalDiv;
 };
 export const createArticalCard = (img, title, abstract, link) => {
+  let imgsrc = img;
+  if (imgsrc === undefined) {
+    imgsrc = 'public/img/unknown.png';
+  }
   const articalContainer = document.getElementById(ARTICAL_CARD_CONTAINER_ID);
   articalContainer.innerHTML += `
   <div class="card">
     <div class="card-body">
-    <img src ="${img}">
+    <img src ="${imgsrc}">
+    <div>
       <h2>${title} </h2>
       <p> ${abstract}</p>
       <a href=${link}>readmore</a>
+    </div>
     </div>
   </div>
   
