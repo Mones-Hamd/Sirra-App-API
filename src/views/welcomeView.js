@@ -27,7 +27,7 @@ export const createWelcomePage = () => {
     <span> Hmmm !!, I Feel...</span><br><br>
     <select id =${SELCTED_FEELING_ID} >
         <option value="" style="display:none;">Select feeling</option>
-        <option id=${CURIOUS_NEWS_API_ID} value="public/img/news.png"> Curious! What is the latest news?</option>
+        <option id=${CURIOUS_NEWS_API_ID} value="public/img/newyork.jpg"> Curious! What is the latest news?</option>
         <option id=${BORING_JOK_API_ID} value="public/img/jokes.png"> Boring ! Tell me some jokes? </option>
         <option Id=${EXCITED_SPORT_API_ID} value="public/img/football.png"> Excited ! What are football matches today?</option>
         <option id=${HUNGRY_FOOD_API_ID} value="public/img/food.png">Hungry!! Tell me some food recipe </option> 

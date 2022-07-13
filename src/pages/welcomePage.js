@@ -31,7 +31,7 @@ function initSelectionSection() {
 }
 const fetchSelectedApi = (selected) => {
   const selectedImage = document.getElementById(SELECTED_IMAGE_ID);
-  if (selected === 'public/img/news.png') {
+  if (selected === 'public/img/newyork.jpg') {
     selectedImage.addEventListener('click', () => {
       initWeatherSection();
       initButtonElement();
