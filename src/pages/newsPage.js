@@ -11,11 +11,11 @@ import {
 } from '../views/newsView.js';
 
 export const initArticalCards = async () => {
-  const userInterFace = document.getElementById(USER_INTERFACE_ID);
+  const newsContainer = document.querySelector('.container');
   const searchElement = createSearchArticalElement();
-  userInterFace.appendChild(searchElement);
+  newsContainer.appendChild(searchElement);
   const aritcalElement = createArticalElement();
-  userInterFace.appendChild(aritcalElement);
+  newsContainer.appendChild(aritcalElement);
   const searchEL = document.getElementById(ARTICAL_SEARCH_ID);
   let searchTimeoutToken = 0;
   searchEL.onkeyup = (e) => {
@@ -40,7 +40,7 @@ const initAritcalContent = async () => {
   copyRight.innerText = getData.copyright;
 
   await data.forEach((element) => {
-    const imageElement = element['media'][0]['media-metadata'][2].url;
+    const imageElement = element['media'][0]?.['media-metadata'][2].url;
     const titleElement = element.title;
     const abstractElement = element.abstract;
     const linkElement = element.url;
@@ -56,7 +56,7 @@ export const initSearchArtical = async (word) => {
   }
   const articalSection = document.getElementById(ARTICAL_CARD_CONTAINER_ID);
 
-  articalSection.innerHTML = `<h1> You are looking for: ${word} ..</h1>`;
+  articalSection.innerHTML = '';
   const QueryURL = `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${word}&api-key=lKN7Juy8tbmDgVbVW9ukPWWs50yirKyR`;
   const searchInAPI = await fetchApiData(QueryURL);
   const data = await searchInAPI.response['docs'];
