@@ -11,11 +11,11 @@ import {
 } from '../views/newsView.js';
 
 export const initArticalCards = async () => {
-  const userInterFace = document.getElementById(USER_INTERFACE_ID);
+  const newsContainer = document.querySelector('.container');
   const searchElement = createSearchArticalElement();
-  userInterFace.appendChild(searchElement);
+  newsContainer.appendChild(searchElement);
   const aritcalElement = createArticalElement();
-  userInterFace.appendChild(aritcalElement);
+  newsContainer.appendChild(aritcalElement);
   const searchEL = document.getElementById(ARTICAL_SEARCH_ID);
   let searchTimeoutToken = 0;
   searchEL.onkeyup = (e) => {

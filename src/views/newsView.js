@@ -4,7 +4,7 @@ export const createSearchArticalElement = () => {
   const searchDiv = document.createElement('div');
   searchDiv.className = 'search-artical';
   searchDiv.innerHTML = String.raw`
-  <h3>Artical search </h3>
+  <h3>Article search </h3>
   <input type="text"
     id=${ARTICAL_SEARCH_ID} 
      placeholder="Search for Article"/>
@@ -16,7 +16,7 @@ export const createArticalElement = () => {
   const articalDiv = document.createElement('div');
   articalDiv.className = 'artical-section';
   articalDiv.innerHTML = String.raw`
- <h1 id="title">The Most Popular Artical in NEWYORK TIME</h1>
+ <h1 id="title">The Most Popular Article in NEWYORK TIME</h1>
 <div id=${ARTICAL_CARD_CONTAINER_ID}>
 
 

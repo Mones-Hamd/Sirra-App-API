@@ -43,7 +43,8 @@ export const createSelectSection = (value) => {
   selectionDiv.innerHTML = '';
   selectionDiv.innerHTML = String.raw`
   <div id="select-value">
-    <img src="${value}" id=${SELECTED_IMAGE_ID}>
+    <img src="${value}" id=${SELECTED_IMAGE_ID} >
+    <p> press here </p>
   </div>
   `;
   return selectionDiv;

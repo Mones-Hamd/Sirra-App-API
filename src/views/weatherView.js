@@ -2,6 +2,9 @@ import { USER_INTERFACE_ID } from '../constant.js';
 
 export const createWeatherElemnt = () => {
   const weatherDiv = document.createElement('div');
+  const contanerDiv = document.createElement('div');
+  contanerDiv.className = 'container';
+  contanerDiv.appendChild(weatherDiv);
   weatherDiv.className = 'weather-container';
   weatherDiv.innerHTML = String.raw`
   <div class='weather-location'>
@@ -16,5 +19,5 @@ export const createWeatherElemnt = () => {
   </div>
   `;
 
-  return weatherDiv;
+  return contanerDiv;
 };
