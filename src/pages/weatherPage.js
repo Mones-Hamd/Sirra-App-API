@@ -18,7 +18,7 @@ const fetchWeatherData = () => {
     navigator.geolocation.getCurrentPosition(async (position) => {
       lat = position.coords.latitude;
       long = position.coords.longitude;
-      const url = `http://api.weatherapi.com/v1/current.json?key=caa182d363df452c858191906220907&q=${lat},${long}
+      const url = `https://api.weatherapi.com/v1/current.json?key=caa182d363df452c858191906220907&q=${lat},${long}
        `;
 
       const data = await fetchApiData(url);
