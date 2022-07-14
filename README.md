@@ -43,7 +43,7 @@ https://mones-hamd.github.io/Sirra-App-API/index.html
     |  |  |--weatherView.js
     |  |  |--newsView.js
     |  |  |--backButtonView.js
-    |  |--pages             #logic_part
+    |  |--pages                            #logic_part
     |  |  |--loginPage.js
     |  |  |--welcomePage.js
     |  |  |--weatherPage.js
