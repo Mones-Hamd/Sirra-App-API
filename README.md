@@ -26,18 +26,18 @@ https://mones-hamd.github.io/Sirra-App-API/index.html
 
 ### app structur :
     .
-    |                     #front_end_part
+    |                                    #front_end_part
     |--public
     |  |--img
     |  |--style.css
     |  
     |--reademe.md
     |--index.html
-    |--src                #javascript_part
+    |--src                                #javascript_part
     |  |
     |  |--app.js
     |  |--constant.js
-    |  |--views             #front_end_DOM
+    |  |--views                           #front_end_DOM
     |  |  |--loginView.js
     |  |  |--welcomeView.js 
     |  |  |--weatherView.js
