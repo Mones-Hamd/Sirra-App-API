@@ -40,7 +40,7 @@ const initAritcalContent = async () => {
   copyRight.innerText = getData.copyright;
 
   await data.forEach((element) => {
-    const imageElement = element['media'][0]['media-metadata'][2].url;
+    const imageElement = element['media'][0]?.['media-metadata'][2].url;
     const titleElement = element.title;
     const abstractElement = element.abstract;
     const linkElement = element.url;
