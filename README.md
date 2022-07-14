@@ -1,7 +1,7 @@
 # Sirra-App-API 
 ----
 ### Description : 
-<p>Sirra app is an app that the user can interact with by choosing the current feeling that he/she feels, and the app shows suggestions that fit with the chosen feeling ,and the suggestions are web pages fwtched by the API's of several companies ,websites,or newspeapers .</p> 
+<p>Sirra app is an app that the user can interact with by choosing the current feeling that he/she feels, and the app shows suggestions that fit with the chosen feeling ,and the suggestions are web pages fetched by the API's of several companies ,websites,or newspeapers .</p> 
  
 ### Demo:
 https://mones-hamd.github.io/Sirra-App-API/index.html
