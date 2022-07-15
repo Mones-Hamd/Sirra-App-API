@@ -8,6 +8,7 @@ import {
   createWelcomePage,
 } from '../views/welcomeView.js';
 import { initButtonElement } from './backButtonPage.js';
+import { initJokeContainer } from './jokesPage.js';
 import { initArticalCards } from './newsPage.js';
 import { initWeatherSection } from './weatherPage.js';
 
@@ -40,7 +41,8 @@ const fetchSelectedApi = (selected) => {
   }
   if (selected === 'public/img/jokes.png') {
     selectedImage.addEventListener('click', () => {
-      console.log(selected);
+      initJokeContainer();
+      initButtonElement();
     });
   }
   if (selected === 'public/img/football.png') {
