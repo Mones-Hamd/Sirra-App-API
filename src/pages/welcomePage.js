@@ -1,8 +1,4 @@
-import {
-  SELCTED_FEELING_ID,
-  TARGET_BTN_ID,
-  USER_INTERFACE_ID,
-} from '../constant.js';
+import { SELCTED_FEELING_ID, TARGET_BTN_ID } from '../constant.js';
 import { initNewPage } from '../services/initNewPage.js';
 import {
   createSelectSection,
@@ -22,7 +18,7 @@ export const initWelcomePage = () => {
 function initSelectionSection() {
   const selectionDiv = document.querySelector('.selection');
   selectionDiv.innerHTML = '';
-  // const userInterFace = document.getElementById(USER_INTERFACE_ID);
+
   const welcome = document.querySelector('.welcome');
   const select = document.getElementById(SELCTED_FEELING_ID);
   const selected = select.value;
