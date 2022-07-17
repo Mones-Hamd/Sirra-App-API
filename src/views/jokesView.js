@@ -21,7 +21,7 @@ export const createJokeElements = () => {
 </div>
 <div id ='random-btn-container'> 
   <p id=${RANDOM_JOKE_BUTTON_ID}> random joke</p>
-  <p id=${FACT_BUTTON_ID}> random true usless fact</p>
+  <p id=${FACT_BUTTON_ID}> random true useless fact</p>
 </div>
 
 `;

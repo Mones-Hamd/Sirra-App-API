@@ -1,8 +1,9 @@
 import {
   SELCTED_FEELING_ID,
-  SELECTED_IMAGE_ID,
+  TARGET_BTN_ID,
   USER_INTERFACE_ID,
 } from '../constant.js';
+import { initNewPage } from '../services/initNewPage.js';
 import {
   createSelectSection,
   createWelcomePage,
@@ -14,46 +15,45 @@ import { initArticalCards } from './newsPage.js';
 import { initWeatherSection } from './weatherPage.js';
 
 export const initWelcomePage = () => {
-  const userInterFace = document.getElementById(USER_INTERFACE_ID);
-  userInterFace.innerHTML = '';
-  const welcomElement = createWelcomePage();
-  userInterFace.appendChild(welcomElement);
+  initNewPage(createWelcomePage());
   const select = document.getElementById(SELCTED_FEELING_ID);
   select.addEventListener('input', initSelectionSection);
 };
 function initSelectionSection() {
   const selectionDiv = document.querySelector('.selection');
   selectionDiv.innerHTML = '';
-  const userInterFace = document.getElementById(USER_INTERFACE_ID);
+  // const userInterFace = document.getElementById(USER_INTERFACE_ID);
+  const welcome = document.querySelector('.welcome');
   const select = document.getElementById(SELCTED_FEELING_ID);
   const selected = select.value;
   const selectImage = createSelectSection(selected);
-  userInterFace.append(selectImage);
-  fetchSelectedApi(selected);
+
+  getSelectedApi(selected);
+  welcome.append(selectImage);
 }
-const fetchSelectedApi = (selected) => {
-  const selectedImage = document.getElementById(SELECTED_IMAGE_ID);
-  if (selected === 'public/img/newyork.jpg') {
-    selectedImage.addEventListener('click', () => {
+const getSelectedApi = (selected) => {
+  const selectedImageBtn = document.getElementById(TARGET_BTN_ID);
+  if (selected === 'public/img/newyork.png') {
+    selectedImageBtn.addEventListener('click', () => {
       initWeatherSection();
       initButtonElement();
       initArticalCards();
     });
   }
   if (selected === 'public/img/jokes.png') {
-    selectedImage.addEventListener('click', () => {
+    selectedImageBtn.addEventListener('click', () => {
       initJokeContainer();
       initButtonElement();
     });
   }
   if (selected === 'public/img/football.png') {
-    selectedImage.addEventListener('click', () => {
+    selectedImageBtn.addEventListener('click', () => {
       initiFootballPage();
       initButtonElement();
     });
   }
   if (selected === 'public/img/food.png') {
-    selectedImage.addEventListener('click', () => {
+    selectedImageBtn.addEventListener('click', () => {
       console.log(selected);
     });
   }

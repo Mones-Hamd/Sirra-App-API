@@ -6,6 +6,7 @@ import {
   HUNGRY_FOOD_API_ID,
   SELCTED_FEELING_ID,
   SELECTED_IMAGE_ID,
+  TARGET_BTN_ID,
   WELCOME_MESSAGE_ID,
   WELCOME_MESSAGE_TEXT_ID,
   WELCOME_MESSAGE_TITLE_ID,
@@ -19,15 +20,15 @@ export const createWelcomePage = () => {
   welcomDiv.innerHTML = String.raw`
   <div id=${WELCOME_MESSAGE_ID}>
     <h2 id=${WELCOME_MESSAGE_TITLE_ID}> Hi ${name.toUpperCase()} </h2>
-    <p id =${WELCOME_MESSAGE_TEXT_ID}> Nice to see you .!<br> <br>Its pleasure to serve you .. <br><br>
+    <p id =${WELCOME_MESSAGE_TEXT_ID}> Nice to see you .! <br>Its pleasure to serve you .. <br>
     So could you please select how do you feel now? ... </p>
   </div> 
   <div id=${FEELING_SELECTOR_ID}>
-    <h2>Thanks Sira </h2><br><br>
-    <span> Hmmm !!, I Feel...</span><br><br>
+    <h2>Thanks Sira </h2>
+    <span> Hmmm !!, I Feel...</span><br>
     <select id =${SELCTED_FEELING_ID} >
         <option value="" style="display:none;">Select feeling</option>
-        <option id=${CURIOUS_NEWS_API_ID} value="public/img/newyork.jpg"> Curious! What is the latest news?</option>
+        <option id=${CURIOUS_NEWS_API_ID} value="public/img/newyork.png"> Curious! What is the latest news?</option>
         <option id=${BORING_JOK_API_ID} value="public/img/jokes.png"> Boring ! Tell me some jokes? </option>
         <option Id=${EXCITED_SPORT_API_ID} value="public/img/football.png"> Excited ! What are football matches today?</option>
         <option id=${HUNGRY_FOOD_API_ID} value="public/img/food.png">Hungry!! Tell me some food recipe </option> 
@@ -44,7 +45,7 @@ export const createSelectSection = (value) => {
   selectionDiv.innerHTML = String.raw`
   <div id="select-value">
     <img src="${value}" id=${SELECTED_IMAGE_ID} >
-    <p> press here </p>
+    <p id =${TARGET_BTN_ID}> press here </p>
   </div>
   `;
   return selectionDiv;
