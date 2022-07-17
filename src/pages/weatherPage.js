@@ -1,12 +1,10 @@
-import { USER_INTERFACE_ID } from '../constant.js';
 import { fetchApiData } from '../services/fetchAPI.js';
+import { renderError } from '../services/handelErrors.js';
+import { initNewPage } from '../services/initNewPage.js';
 import { createWeatherElemnt } from '../views/weatherView.js';
 
 export const initWeatherSection = () => {
-  const userInterFace = document.getElementById(USER_INTERFACE_ID);
-  userInterFace.innerHTML = '';
-  const weatherElement = createWeatherElemnt();
-  userInterFace.append(weatherElement);
+  initNewPage(createWeatherElemnt());
 
   fetchWeatherData();
 };
@@ -20,10 +18,13 @@ const fetchWeatherData = () => {
       long = position.coords.longitude;
       const url = `https://api.weatherapi.com/v1/current.json?key=caa182d363df452c858191906220907&q=${lat},${long}
        `;
+      try {
+        const data = await fetchApiData(url);
 
-      const data = await fetchApiData(url);
-
-      showWeatherStatus(data);
+        showWeatherStatus(data);
+      } catch (err) {
+        renderError(err);
+      }
     });
   } else {
     timeZoneEl.innerHTML = 'location is unavailable';
@@ -38,7 +39,7 @@ const showWeatherStatus = (data) => {
   iconEl.src = condition.icon;
   const degree = document.getElementById('degree');
 
-  degree.innerHTML = `${temp_c}`;
+  degree.innerText = `${temp_c} c`;
   const statusEl = document.getElementById('status-txt');
   statusEl.innerText = `${condition.text}`;
 };

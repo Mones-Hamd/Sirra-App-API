@@ -1,17 +1,11 @@
-import {
-  CONFIRM_BUTTON_ID,
-  USER_INTERFACE_ID,
-  USER_NAME_ID,
-} from '../constant.js';
+import { CONFIRM_BUTTON_ID, USER_NAME_ID } from '../constant.js';
 import { setName } from '../lib/localStorage.js';
+import { initNewPage } from '../services/initNewPage.js';
 import { creatLoginElement } from '../views/loginView.js';
 import { initWelcomePage } from './welcomePage.js';
 
 export const initLoginPage = () => {
-  const interfaceElement = document.getElementById(USER_INTERFACE_ID);
-  interfaceElement.innerHTML = ' ';
-  const loginElement = creatLoginElement();
-  interfaceElement.append(loginElement);
+  const newPage = initNewPage(creatLoginElement());
   const buttonElemnt = document.getElementById(CONFIRM_BUTTON_ID);
   buttonElemnt.addEventListener('click', () => {
     confirmAndStart();

@@ -22,7 +22,7 @@ const backToFeelingPage = () => {
   const welcomBackTitleEl = document.getElementById(WELCOME_MESSAGE_TITLE_ID);
   welcomBackTitleEl.innerText = `Welcome Back ${name.toUpperCase()}`;
   const welcomeBackTextEL = document.getElementById(WELCOME_MESSAGE_TEXT_ID);
-  console.log(welcomeBackTextEL);
+
   welcomeBackTextEL.innerHTML = `Nice to see you again ,<br> I wish the previous Page was useful to you<br>
    I am ready to listen to your FEElING AGAIN !! `;
 };

@@ -4,13 +4,14 @@ import {
   ARTICAL_CARD_CONTAINER_ID,
 } from '../constant.js';
 import { fetchApiData } from '../services/fetchAPI.js';
+import { renderError } from '../services/handelErrors.js';
 import {
   createArticalElement,
   createArticalCard,
   createSearchArticalElement,
 } from '../views/newsView.js';
 
-export const initArticalCards = async () => {
+export const initArticalCards = () => {
   const newsContainer = document.querySelector('.container');
   const searchElement = createSearchArticalElement();
   newsContainer.appendChild(searchElement);
@@ -22,7 +23,7 @@ export const initArticalCards = async () => {
     clearTimeout(searchTimeoutToken);
 
     if (searchEL.value.trim().length === 0) {
-      return initAritcalContent();
+      return;
     }
     searchTimeoutToken = setTimeout(() => {
       initSearchArtical(searchEL.value);
@@ -34,38 +35,37 @@ export const initArticalCards = async () => {
 const initAritcalContent = async () => {
   const newsUrl =
     'https://api.nytimes.com/svc/mostpopular/v2/emailed/7.json?api-key=lKN7Juy8tbmDgVbVW9ukPWWs50yirKyR';
-  const getData = await fetchApiData(newsUrl);
-  const data = await getData.results;
-  const copyRight = document.getElementById('copyright');
-  copyRight.innerText = getData.copyright;
+  try {
+    const getData = await fetchApiData(newsUrl);
+    const data = await getData.results;
+    const copyRight = document.getElementById('copyright');
+    copyRight.innerText = getData.copyright;
 
-  await data.forEach((element) => {
-    const imageElement = element['media'][0]?.['media-metadata'][2].url;
-    const titleElement = element.title;
-    const abstractElement = element.abstract;
-    const linkElement = element.url;
-    createArticalCard(imageElement, titleElement, abstractElement, linkElement);
-  });
+    data.forEach(({ media, title, abstract, url }) => {
+      const imageSrc = media[0]?.['media-metadata'][2].url;
+
+      createArticalCard(imageSrc, title, abstract, url);
+    });
+  } catch (err) {
+    renderError(err);
+  }
 };
 
 export const initSearchArtical = async (word) => {
-  console.log(word.length);
-  if (word.length !== 0) {
-    const title = document.getElementById('title');
-    title.innerText = 'Search Results';
-  }
+  const title = document.getElementById('title');
+  title.innerText = 'Search Results...';
   const articalSection = document.getElementById(ARTICAL_CARD_CONTAINER_ID);
-
   articalSection.innerHTML = '';
   const QueryURL = `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${word}&api-key=lKN7Juy8tbmDgVbVW9ukPWWs50yirKyR`;
-  const searchInAPI = await fetchApiData(QueryURL);
-  const data = await searchInAPI.response['docs'];
+  try {
+    const searchInAPI = await fetchApiData(QueryURL);
+    const data = await searchInAPI.response['docs'];
 
-  const resulte = await data.forEach((element) => {
-    const img = `https://www.nytimes.com/${element['multimedia'][0]['url']}`;
-    const title = element['headline'].main;
-    const abstract = element.abstract;
-    const link = element.web_url;
-    createArticalCard(img, title, abstract, link);
-  });
+    const resulte = data.map(({ multimedia, headline, abstract, web_url }) => {
+      const img = `https://www.nytimes.com/${multimedia[0].url}`;
+      createArticalCard(img, headline.main, abstract, web_url);
+    });
+  } catch (err) {
+    renderError(err);
+  }
 };

@@ -7,6 +7,7 @@ export const WELCOME_MESSAGE_TITLE_ID = 'welcome-msg-title';
 export const WELCOME_MESSAGE_TEXT_ID = 'welcome-msg-text';
 export const FEELING_SELECTOR_ID = 'feeling-selector';
 export const SELCTED_FEELING_ID = 'selected';
+export const TARGET_BTN_ID = 'target-btn';
 export const CURIOUS_NEWS_API_ID = 'curious-news';
 export const BORING_JOK_API_ID = 'boring-jok';
 export const EXCITED_SPORT_API_ID = 'excited-sport';

@@ -4,7 +4,6 @@ export const createSearchArticalElement = () => {
   const searchDiv = document.createElement('div');
   searchDiv.className = 'search-artical';
   searchDiv.innerHTML = String.raw`
-  <h3>Article search </h3>
   <input type="text"
     id=${ARTICAL_SEARCH_ID} 
      placeholder="Search for Article"/>
