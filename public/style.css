@@ -9,6 +9,9 @@ body{
   font-family: 'Cairo', sans-serif;
   display: flex;
   flex-direction: column;
+  height: 100%;
+  min-width: 100%;
+  margin-top:auto ;
 }
 .logo{
   margin: 20px;
@@ -83,19 +86,16 @@ footer{
 }
 
 #user-interface{
+  min-width: 100%;
+  min-height: 100%;
 
-  display: flex;
-  max-width: 100%;
-  min-height: 100vh;
-  flex-direction: column;
-  background-image: url('./img/background.jpeg');
-  background-size:contain;
 
 }
 
 .login-container{
+  width: 100%;
   background-image: url('./img/login.jpg');
-  height: 100vh;
+  min-height: 100vh;
   background-size: cover;
   display: flex;
 }
@@ -159,6 +159,66 @@ text-align: center;
   color: aliceblue;
 
 }
+
+/*media queri */
+@media (min-width:250px) and (max-width:600px){
+
+
+
+  .logo{
+    align-self: center;
+    background-color: aliceblue;
+    border-radius: 50%;
+    max-width: 90px;
+    max-height: 100px;
+    font-size: 10px;
+  }
+  .logo img{
+    max-width:70%;
+    max-height: 70%;
+  }
+  .logo p span{
+    background-color: #272a2a;
+    color: aliceblue;
+    border-radius: 50%;
+    display: inline-block;
+    max-width: 10px;
+  }
+  #user-interface{
+    min-height: 100%;
+    min-width: 100%;
+  }
+  .login-card{
+    min-width: 90%;
+    font-size: 0.7em;
+    max-height: 40vh;
+  }
+  .login-card #user-name{
+  padding: 20px;
+  width: 80%;
+  }
+  .login-container{
+    min-width: 100%;
+  }
+  footer{
+    min-height: 20vh;
+    min-width: 100%;
+    margin-bottom: 0;
+    font-size: smaller;
+    display: flex;
+    flex-direction: column;
+  }
+  #social-media{
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  #gmail{
+    display: none;
+  }
+
+}
+ 
 /* welcom page */
 
  .welcome{
@@ -168,8 +228,9 @@ text-align: center;
   font-family: 'Cairo', sans-serif;
   max-width: 100%;
   gap :20px;
-  max-height: 100vh;
-  
+  min-height: 100vh;
+  background-image: url('./img/background.jpeg');
+  background-size:contain;
 }
 #welcome-message{
  grid-row: 2/5;
@@ -202,7 +263,7 @@ text-align: center;
   border-radius: 30px 30px 0 30px;
   padding: auto 20px;
   background-image: linear-gradient(rgb(206, 200, 200) , white);
-  max-width: 80%;
+  width: 80%;
   max-height: 90%;
  
 
@@ -235,7 +296,7 @@ text-align: center;
   grid-row: 8/12;
   display: flex;
   justify-content: center;
- max-height: 50%;
+  max-height: 50%;
  
 }
 #select-value{
@@ -270,6 +331,57 @@ text-align: center;
   background-color: black;
   color: aliceblue;
 }
+/*media query */
+@media (min-width:700px) and (max-width:1080px){
+  #welcome-message {
+    min-height: 20vh;
+    font-size: smaller;
+    grid-column: 2/8;
+    grid-row: 2/5;
+    min-width: 90%;
+  }
+  #feeling-selector{
+    max-height: 20vh;
+    font-size: smaller;
+    grid-row:3/5 ;
+    max-width:90%;
+
+  }
+  #feeling-selector select{
+    min-width: 100%;
+    margin:30px 0 3px 0;
+  }
+}
+@media (min-width:250px) and (max-width:700px){
+  #welcome-message {
+    margin: 20px auto;
+    min-width: 90%;
+    max-height: 30vh;
+    font-size: smaller;
+    grid-column: 2/13;
+    grid-row: 5/6;
+    font-size: 0.5em;
+  }
+  #feeling-selector{
+    max-height: 25vh;
+    font-size: smaller;
+    grid-row:6/8 ;
+    min-width:80%;
+    grid-column: 2/13;
+
+  }
+  #feeling-selector select{
+    min-width: 100%;
+    margin:30px 0 3px 0;
+  }
+  .selection{
+    max-height: 30vh;
+  }
+  .selection img{
+    max-width: 70%;
+  }
+}
+
 
 
 /* weather and news style*/
@@ -315,12 +427,10 @@ max-width: 30%;
   font-size: 1.5em;
 }
 .button-section{
-  margin: 20px 20px;
   position: absolute;
-  align-self: flex-end;
-  justify-self: start;
+  top :30px;
   width:20%;
-  right:125px;
+  right:100px;
 
 }
 
@@ -423,7 +533,7 @@ margin: 10px auto;
 .card:nth-child(even) {
 grid-column:8/13 ;
 border-left: #272a2a solid 2px;
-min-height: 70%;
+max-height: 100%;
 }
 .card:nth-child(even) .card-body{
   display: flex;
@@ -449,6 +559,93 @@ margin: 3px auto;
   text-align: center;
   padding: 10px;
   margin-bottom: 30px;
+}
+/*media query */
+@media (min-width:250px) and (max-width: 980px){
+  .container{
+    margin-top: 100px;
+    min-width: 100%;
+  }
+  .weather-container{
+    grid-row:2/3;
+    min-width: 100%;
+    font-size: smaller;
+  }
+  .search-artical{
+    grid-row: 3/4;
+    min-width: 100%;
+    align-self: center;
+  }
+  .search-artical input{
+    min-width: 100%;
+  }
+  .artical-section{
+    grid-row: 4/5;
+  }
+  .artical-section h1{
+    font-size: smaller;
+  }
+  .card:nth-child(odd){
+    grid-column: span 12;
+   
+  
+  }
+  .card-body{
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .card:nth-child(odd) .card-body{
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    font-size: smaller;
+    justify-content: center;
+
+
+  }
+  .card:nth-child(odd) .card-body img{
+    max-width:50%;
+  }
+  .card:nth-child(odd) .card-body h2{
+    font-size: small;
+  }
+  .card:nth-child(odd) .card-body p{
+    font-size: small;
+  }
+  .card:nth-child(odd) .card-body a{
+    font-size: small;
+  }
+  .card:nth-child(even){
+    grid-column: span 12;
+    height: 100%;
+    min-width: 100%;
+    justify-content: center;
+
+  }
+  .card:nth-child(even) .card-body img{
+    min-width: 50%;
+
+  }
+  .card:nth-child(even) .card-body h2{
+    font-size: smaller;
+  }
+  .card:nth-child(even) .card-body p{
+    font-size: smaller;
+  }
+  .card:nth-child(even) .card-body a{
+    font-size: smaller;
+  }
+  .button-section{
+    left: 10px;
+    top :5px;
+  }
+  #back-btn{
+    min-width: 50%;
+    
+  }
 }
 /* joke page */
 .container-jokes{
@@ -524,6 +721,36 @@ grid-row: 2/5;
   color: aliceblue;
 
 }
+/* media query */
+@media (min-width:250px) and (max-width:1100px) {
+  #sirra-joke{
+    grid-column: 2/12;
+    grid-row: 3/6;
+   
+    
+  }
+  #sirra-joke p{
+    font-size: smaller;
+  }
+  #monitor-joke-container{
+    grid-column:3/12 ;
+    grid-row: 6/11;
+  }
+  #monitor-joke-container p{
+    font-size: smaller;
+  }
+  #random-btn-container{
+    grid-column: 1/12;
+    max-height: 20vh;
+    min-width: 100%;
+    justify-content: space-between;
+  }
+  #random-btn-container p{
+    font-size: smaller;
+    margin: 10px;
+    min-width: 50%;
+  }
+}
 /*sport page */
 .football-container{
   height: 100%;
@@ -592,4 +819,75 @@ max-width: 20%;
   font-size: 1.5em;
 
 }
+/* media query */
+@media  (max-width:1080px) {
 
+  #teame-title p{
+    background-color:inherit;
+    color: #272a2a;
+    font-size: small;
+  }
+  .match-container{
+    font-size: smaller;
+  }
+  .match-container h3{
+    font-size: small;
+  }
+  #team-detail{
+    font-size: small;
+  }
+}
+@media  (max-width:700px) {
+
+  #teame-title p{
+ 
+    font-size: smaller;
+  }
+  .match-container{
+    font-size: smaller;
+  }
+  .match-container h3{
+    font-size: smaller;
+  }
+  #team-detail{
+    font-size: smaller;
+  }
+}
+@media  (max-width:600px) {
+  .match-container{
+    grid-column: span 12;
+    max-height: 30vh;
+  }
+
+  #teame-title p{
+    background-color:inherit;
+    color: #272a2a;
+    font-size: small;
+  }
+  .match-container{
+    font-size: smaller;
+  }
+  .match-container h3{
+    font-size: small;
+  }
+  #team-detail{
+    font-size: small;
+  }
+}
+/*error page*/
+.error-container{
+height: 100vh;
+display: flex;
+flex-direction: column;
+justify-content: space-evenly;
+align-items: center;
+}
+.error-container h1{
+  margin-top: 100px;
+  font-size: 1.5em;
+  max-width: 80%;
+  color: red;
+}
+.error-container img{
+  max-width: 80%;
+}
