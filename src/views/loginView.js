@@ -8,8 +8,6 @@ export const creatLoginElement = () => {
   const divElement = document.createElement('div');
   divElement.classList.add(`${LOGIN_CONTAINER_CLASS}`);
   divElement.innerHTML = String.raw`
- <div id='logo'>
- 
  </div>
   <div class='login-card'> 
    <h1>HELLO</h1>
