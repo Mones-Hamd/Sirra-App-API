@@ -15,22 +15,22 @@ export const initFoodSearchResult = async (word, url) => {
   serachEl.innerHTML = '';
   //make it reuseable
   let urlFinal = url;
-  if (word !== null) {
+  if (word) {
     urlFinal = `https://www.themealdb.com/api/json/v1/1/search.php?s=${word}`;
   }
   try {
     const fetchData = await fetchApiData(urlFinal);
 
-    const data = await fetchData.meals;
+    const data = fetchData.meals;
 
-    const searchResults = await data.map(
+    const searchResults = data.map(
       ({ strMealThumb, strMeal, strArea, idMeal }) => {
         createFoodSearchCard(strMealThumb, strMeal, strArea, idMeal);
       },
     );
 
-    const selectElement = document.querySelectorAll('.recipes-link');
-    selectElement.forEach((select) =>
+    const selectElements = document.querySelectorAll('.recipes-link');
+    selectElements.forEach((select) =>
       select.addEventListener('click', () => {
         initMealDetail(select.id);
         clearDetail();
