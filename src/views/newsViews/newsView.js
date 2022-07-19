@@ -1,5 +1,8 @@
-import { ARTICAL_CARD_CONTAINER_ID, ARTICAL_SEARCH_ID } from '../constant.js';
-
+import {
+  ARTICAL_CARD_CONTAINER_ID,
+  ARTICAL_SEARCH_ID,
+} from '../../constant.js';
+//search article element
 export const createSearchArticalElement = () => {
   const searchDiv = document.createElement('div');
   searchDiv.className = 'search-artical';
@@ -11,6 +14,7 @@ export const createSearchArticalElement = () => {
   `;
   return searchDiv;
 };
+//prepare article section
 export const createArticalElement = () => {
   const articalDiv = document.createElement('div');
   articalDiv.className = 'artical-section';
@@ -26,6 +30,7 @@ export const createArticalElement = () => {
 `;
   return articalDiv;
 };
+//reuseable function for creat article card
 export const createArticalCard = (img, title, abstract, link) => {
   let imgsrc = img;
   if (imgsrc === undefined) {

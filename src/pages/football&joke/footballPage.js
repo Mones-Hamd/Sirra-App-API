@@ -1,16 +1,16 @@
-import { fetchApiData } from '../services/fetchAPI.js';
-import { renderError } from '../services/handelErrors.js';
-import { initNewPage } from '../services/initNewPage.js';
+import { fetchApiData } from '../../utility/fetchAPI.js';
+import { renderError } from '../../utility/handelErrors.js';
+import { initNewPage } from '../../utility/initNewPage.js';
 import {
   createFootballContainer,
   createMatchesContainer,
-} from '../views/footballView.js';
-
+} from '../../views/football&joke/footballView.js';
+//initial new page
 export const initiFootballPage = () => {
   initNewPage(createFootballContainer());
   initCurrentMatches();
 };
-
+//get current matches and initial current matches cards
 const initCurrentMatches = async () => {
   const footballUrl =
     'https://apiv2.allsportsapi.com/football/?met=Livescore&timezone=Europe/Berlin&APIkey=75e48fb3c88551b807c1bec340ad3961bceb698567681ab89f400e20239a8d4a';

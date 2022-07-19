@@ -5,7 +5,7 @@ import {
   JOKE_TXT_ID,
   RANDOM_JOKE_BUTTON_ID,
   FACT_BUTTON_ID,
-} from '../constant.js';
+} from '../../constant.js';
 
 export const createJokeElements = () => {
   const containerJokDiv = document.createElement('div');

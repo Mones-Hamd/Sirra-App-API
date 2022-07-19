@@ -1,4 +1,4 @@
-import { getName } from '../lib/localStorage.js';
+import { getName } from '../../lib/localStorage.js';
 
 export const createFoodElements = () => {
   const name = getName();
