@@ -5,6 +5,7 @@ import {
   createWelcomePage,
 } from '../views/welcomeView.js';
 import { initButtonElement } from './backButtonPage.js';
+import { initFoodPage } from './foodPage.js';
 import { initiFootballPage } from './footballPage.js';
 import { initJokeContainer } from './jokesPage.js';
 import { initArticalCards } from './newsPage.js';
@@ -50,7 +51,8 @@ const getSelectedApi = (selected) => {
   }
   if (selected === 'public/img/food.png') {
     selectedImageBtn.addEventListener('click', () => {
-      console.log(selected);
+      initFoodPage();
+      initButtonElement();
     });
   }
 };

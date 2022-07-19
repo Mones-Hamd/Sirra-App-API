@@ -5,6 +5,7 @@ import {
 } from '../constant.js';
 import { fetchApiData } from '../services/fetchAPI.js';
 import { renderError } from '../services/handelErrors.js';
+import { searchBar } from '../services/searchbar.js';
 import {
   createArticalElement,
   createArticalCard,
@@ -18,17 +19,8 @@ export const initArticalCards = () => {
   const aritcalElement = createArticalElement();
   newsContainer.appendChild(aritcalElement);
   const searchEL = document.getElementById(ARTICAL_SEARCH_ID);
-  let searchTimeoutToken = 0;
-  searchEL.onkeyup = (e) => {
-    clearTimeout(searchTimeoutToken);
+  const searchResult = searchBar(searchEL, initSearchArtical);
 
-    if (searchEL.value.trim().length === 0) {
-      return;
-    }
-    searchTimeoutToken = setTimeout(() => {
-      initSearchArtical(searchEL.value);
-    }, 850);
-  };
   initAritcalContent();
 };
 
