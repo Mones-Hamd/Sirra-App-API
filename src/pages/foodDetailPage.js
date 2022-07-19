@@ -13,6 +13,5 @@ export const initMealDetail = async (idMeal) => {
 };
 export const clearDetail = () => {
   const detailDiv = document.getElementById('detail-card');
-  const containerDiv = document.getElementById('search-container');
-  containerDiv.removeChild(detailDiv);
+  detailDiv.remove();
 };
