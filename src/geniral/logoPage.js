@@ -1,6 +1,6 @@
 import { USER_INTERFACE_ID } from '../constant.js';
 import { createLogoELement } from '../views/logoView.js';
-import { initLoginPage } from './loginPage.js';
+import { initLoginPage } from '../pages/loginPage.js';
 
 export const initLogo = () => {
   const userInterFace = document.getElementById(USER_INTERFACE_ID);
