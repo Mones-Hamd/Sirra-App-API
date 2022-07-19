@@ -14,6 +14,7 @@ import {
 import { getName } from '../lib/localStorage.js';
 
 export const createWelcomePage = () => {
+  //get name from local storage
   const name = getName();
   const welcomDiv = document.createElement('div');
   welcomDiv.className = 'welcome';
@@ -40,6 +41,7 @@ export const createWelcomePage = () => {
   return welcomDiv;
 };
 export const createSelectSection = (value) => {
+  // value = image src url
   const selectionDiv = document.querySelector('.selection');
   selectionDiv.innerHTML = '';
   selectionDiv.innerHTML = String.raw`

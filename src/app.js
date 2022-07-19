@@ -1,5 +1,5 @@
 import { initLoginPage } from './pages/loginPage.js';
-import { initLogo } from './geniral/logoPage.js';
+import { initLogo } from './general/logoPage.js';
 
 export const loadApp = () => {
   initLogo();

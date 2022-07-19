@@ -1,5 +1,3 @@
-import { USER_INTERFACE_ID } from '../constant.js';
-
 export const createWeatherElemnt = () => {
   const weatherDiv = document.createElement('div');
   const contanerDiv = document.createElement('div');

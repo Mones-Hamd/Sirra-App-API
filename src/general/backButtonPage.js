@@ -4,8 +4,8 @@ import {
   WELCOME_MESSAGE_TITLE_ID,
 } from '../constant.js';
 import { getName } from '../lib/localStorage.js';
-import { createBackButton } from '../views/backButtonView.js';
-import { initWelcomePage } from './welcomePage.js.js.js';
+import { createBackButton } from './backButtonView.js';
+import { initWelcomePage } from '../pages/welcomePage.js';
 
 export const initButtonElement = () => {
   const userInterFace = document.getElementById(USER_INTERFACE_ID);
